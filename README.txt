@@ -1,0 +1,1 @@
+Another portfolio site for an artist, with many unusual exceptions. So there is some unusual programming and work-arounds.
