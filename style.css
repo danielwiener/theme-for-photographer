@@ -1319,14 +1319,17 @@ text-decoration: none;
 #primary .side_menu #menu_for_projects li.current-menu-item a {
 		color: #333333;	
 		}
-		
-#primary .side_menu #menu_for_projects .menu-item-type-custom {
-	padding-top: 20px;
-}
 
-#primary .side_menu #menu_for_projects .menu-item-200 { /*this is to deal with Ready to Wear. If the number changes this will have to change. If there is more than one non-date custom menu item added I will have to add some custom classes to the dates.*/
+#primary .side_menu #menu_for_projects li ul.sub-menu {
+	padding-bottom: 20px;
+	}   	
+/*#primary .side_menu #menu_for_projects .menu-item-type-custom {
+	padding-top: 20px;
+} */
+
+/*#primary .side_menu #menu_for_projects .menu-item-200 {
 	padding-top: 0px;
-}
+}*/    /*this is to deal with Ready to Wear. If the number changes this will have to change. If there is more than one non-date custom menu item added I will have to add some custom classes to the dates.*/  
 
 #primary .side_menu #menu_for_projects .menu-item-type-custom a:hover {
 	color: #333333;
