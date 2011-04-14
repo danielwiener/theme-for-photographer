@@ -29,10 +29,14 @@ get_header(); ?>
 		);
 	query_posts($recent_args);
 	if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-			
-				<li><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?><br />
+		<?php $custom_link = get_post_meta($post->ID, 'Custom Link', true); ?> 
+		   <?php if ( $custom_link ): ?>
+		   	    	<li><a href="<?php echo $custom_link; ?>" target="_blank"><?php the_post_thumbnail('thumbnail'); ?><br />
 				<?php the_title(); ?></a></li>
-			
+				<?php else: ?>
+					 <li><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?><br />
+				<?php the_title(); ?></a></li>
+		  <?php endif ?>
 <?php endwhile; ?>
 </ul>
 </div> <!-- #image_grid -->
