@@ -1,0 +1,11 @@
+.htaccess
+.DS_Store?
+uploads/*
+themes/twentyten/*
+themes/twentyeleven/*
+plugins/*
+index.php
+upgrade/*
+themes/margeaux_work/*
+themes/margeaux/lib/metabox/*
+NOTmu-plugins/*
