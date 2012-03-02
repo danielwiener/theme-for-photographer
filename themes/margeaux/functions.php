@@ -106,6 +106,69 @@ To get the extension of an image. http://www.lost-in-code.com/programming/php-co
 	    }
 	}
 
+	/**
+	 * Include and setup custom metaboxes and fields.
+	 *
+	 * @category YourThemeOrPlugin
+	 * @package  Metaboxes
+	 * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
+	 * @link     https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
+	 */
+
+	add_filter( 'cmb_meta_boxes', 'dw_metaboxes' );
+	/**
+	 * Define the metabox and field configurations.
+	 *
+	 * @param  array $meta_boxes
+	 * @return array
+	 */
+	function dw_metaboxes( array $dw_meta_boxes ) {
+
+		// Start with an underscore to hide fields from custom fields list
+		$prefix = '_dw_';
+
+		$dw_meta_boxes[] = array(
+			'id'         => 'more_options',
+			'title'      => 'More Options',
+			'pages'      => array( 'page', ), // Post type
+			'context'    => 'normal',
+			'priority'   => 'high',
+		    // 'show_on' => array( 'key' => 'page-template', 'value' => 'page-artwork.php' ), //only shows on artwork pages, maybe figure out how to do parent page - Sculpture
+			'show_names' => true, // Show field names on the left
+			'fields'     => array(
+				array(
+					'name' => 'External Page',
+					'desc' => 'Please, enter the full url for a Project page external to Wordpress, e.g Jin ',
+					'id'   => $prefix . 'external_page',
+					'type' => 'text',
+				),
+				 array(
+						'name' => 'Display on Front Page',
+						'desc' => 'Check to display this project on the Front Page. There is a limit of 10 projects. Uncheck to take this Project off the front page. ',
+						'id'   => $prefix . 'display_front_page',
+						'type' => 'checkbox',
+					),
+				),   		
+		);
+
+
+		// Add other metaboxes as needed
+
+		return $dw_meta_boxes;
+	}
+
+	add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
+	/**
+	 * Initialize the metabox class.
+	 */
+	function cmb_initialize_cmb_meta_boxes() {
+
+		if ( ! class_exists( 'cmb_Meta_Box' ) )
+			require_once 'lib/metabox/init.php';
+
+	}
+
+
 /* Numeric Pagination *******************************************
 
 This if from the Gravy template by Darren Hoyt. http://www.darrenhoyt.com 
