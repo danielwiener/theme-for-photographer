@@ -25,13 +25,17 @@ get_header(); ?>
 		'post_type' => 'page',
 		'post_status' => 'publish',
 		'caller_get_posts' => 1,
-		'post_parent' => 14
+		'post_parent' => 14,
+		'meta_key' => '_dw_display_front_page',
+		'meta_value' => 'on',
+		'orderby' => 'menu_order',
+		'order' => 'ASC'
 		);
 	query_posts($recent_args);
 	if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-		<?php $custom_link = get_post_meta($post->ID, 'Custom Link', true); ?> 
-		   <?php if ( $custom_link ): ?>
-		   	    	<li><a href="<?php echo $custom_link; ?>" target="_blank"><?php the_post_thumbnail('thumbnail'); ?><br />
+		<?php $external_link = get_post_meta($post->ID, '_dw_external_page', true); ?> 
+		   <?php if ( $external_link ): ?>
+		   	    	<li><a href="<?php echo $external_link; ?>" target="_blank"><?php the_post_thumbnail('thumbnail'); ?><br />
 				<?php the_title(); ?></a></li>
 				<?php else: ?>
 					 <li><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?><br />
