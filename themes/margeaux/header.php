@@ -25,7 +25,7 @@
 	wp_enqueue_script("jquery"); 
 	wp_head();
 ?>
-<script type="text/javascript" src="<?php bloginfo("stylesheet_directory"); ?>/js/yourScript.js"></script>
+
 
 
 <?php if (is_date()) : ?>
