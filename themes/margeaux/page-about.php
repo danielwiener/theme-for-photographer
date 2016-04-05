@@ -1,7 +1,4 @@
 <?php
-if (is_page('About Margeaux' ) ): 
-header('Location: http://www.margeauxwalter.com/art/about-margeaux/statement');
-endif;
 /*
 Template Name: About Pages
 */
