@@ -15,9 +15,7 @@ get_header(); ?>
 <?php get_sidebar('project');
 ?>
 		<div id="container">
-			<div id="content" role="main">
-				
-			
+			<div id="content" role="main">		
 				
 <?php 
 	$recent_args = array(

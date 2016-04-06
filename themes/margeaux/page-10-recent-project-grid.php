@@ -24,7 +24,7 @@ get_header(); ?>
 		'posts_per_page' => 10,
 		'post_type' => 'page',
 		'post_status' => 'publish',
-		'caller_get_posts' => 1,
+		'ignore_sticky_posts' => 1,
 		'post_parent' => 14,
 		'meta_key' => '_dw_display_front_page',
 		'meta_value' => 'on',

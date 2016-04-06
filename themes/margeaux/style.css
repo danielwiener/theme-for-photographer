@@ -907,12 +907,13 @@ body.page .edit-link {
 
 /* =Image Grid DW
 -------------------------------------------------------------- */
-#content #image_grid {
-	padding: 0 0 0 16px;
-	/*border: 1px solid #999;*/
+#main #container #content #image_grid {
+	padding: 0 0 0 10px;
+/*	border: 1px solid red;*/
 	font-family: Helvetica, Arial, sans-serif;
 	margin: 0 auto;
 	text-align: center;
+	display: block;
 	}
 
 #content #image_grid ul {
@@ -921,9 +922,10 @@ list-style: none;
 
 #content #image_grid ul li {
 	float: left;
-	padding: 0 20px 10px 0;
+	padding: 0 7px 10px 0;
 	text-align: center;
 	/*border: 1px solid #999;*/
+	width: 19%;
 }
 
 #content #image_grid ul li img {
