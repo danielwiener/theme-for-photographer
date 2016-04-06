@@ -1481,6 +1481,10 @@ code {
 }
 
 /*Project pages and images on project pages*/
+#projects a img {
+	padding-right: 2px;
+}
+
 div#loader {
   width: 700px;
   
