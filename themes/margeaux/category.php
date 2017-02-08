@@ -9,6 +9,9 @@
 */
 
 get_header(); ?>
+<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$args = array('posts_per_page' => 10, 'paged' => $paged );
+query_posts($args);?>
 <?php get_sidebar(); ?>
 <div id="container"  class="news_width">
 	<div id="content" role="main">
@@ -40,7 +43,14 @@ get_header(); ?>
 	</div> <!-- news -->
 				<?php endwhile; // end of the loop. ?>
 			
-			<?php  numeric_pagination();  ?>
+			<?php  // numeric_pagination();  ?>
+			<div id="nav-below" class="navigation archive_pagination">
+				 <?php the_posts_pagination( array(
+				    'mid_size' => 2,
+				    'prev_text' => __( '&larr; Previous', 'twentyten' ),
+				    'next_text' => __( 'Next &rarr;', 'twentyten' ),
+				) ); ?> </div>
+			</div><!-- #nav-below -->
 			</div><!-- #content -->
 		</div><!-- #container -->
 

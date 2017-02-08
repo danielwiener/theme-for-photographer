@@ -883,6 +883,13 @@ body.page .edit-link {
 	text-align: center;
 	/*width: 33%;*/
 }
+#content .gallery .press-item {
+    float: left;
+    margin-top: 0;
+    text-align: center;
+    width: 25%;
+}
+
 #content .gallery img {
 /*	border: 2px solid #cfcfcf;*/
 }
@@ -1006,6 +1013,9 @@ max-width: 375px;
 	margin: -18px 0 0 0;
 }
 
+.archive_pagination {
+	text-align: center;
+}
 
 /* =Comments
 -------------------------------------------------------------- */

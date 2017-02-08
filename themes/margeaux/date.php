@@ -35,11 +35,14 @@ get_header(); ?>
 									&nbsp;
 									</div><!-- .entry-utility -->
 								</div><!-- #post-## -->
-
+															
 	</div> <!-- news -->
 				<?php endwhile; // end of the loop. ?>
 			
-			
+				<div id="nav-below" class="navigation">
+					<?php // using a plugin https://github.com/keesiemeijer/date-archives-pagination ?>
+					<div class="nav-previous"> <?php dap_previous_posts_link('&larr; Previous');  ?></div><div class="nav-next"><?php dap_next_posts_link('Next &rarr;'); ?> </div>
+				</div><!-- #nav-below -->
 			</div><!-- #content -->
 		</div><!-- #container -->
 
